@@ -7,8 +7,8 @@ description: >-
   then runs a single-elimination bracket: they attack each other's solutions,
   defend and revise, and a judge scores every match on a written rubric until
   one solution survives. Use when the user is not satisfied with an answer,
-  calls it a bad answer, says try again or do better, says "arena", or asks
-  to make them compete.
+  calls it a bad answer, says try again or do better, says "arena", asks to
+  apply this skill, or asks to make them compete.
 argument-hint: "[--agents N | --quick] [--seed S] <task>"
 ---
 
@@ -32,10 +32,13 @@ Every piece of bookkeeping goes through `bracket.py` in this skill's folder:
 python3 "${CLAUDE_SKILL_DIR}/bracket.py" <command>
 ```
 
-Below, `ARENA` means exactly that command. If the path looks unexpanded, use the "Base directory for
-this skill" that Claude Code printed at the top of this skill. The state lives in
+Below, `ARENA` means exactly that command. If `CLAUDE_SKILL_DIR` is unset or the path looks
+unexpanded, run `python3` on `bracket.py` in the directory that contains this file. From the
+repository root that is `skills/arena/bracket.py`. In Cursor, each sub-agent is a Task call with
+`subagent_type` `general-purpose`, the same fields as the Agent call in step 4, and
+`run_in_background` false so the wave returns together. The state lives in
 `.arena/<run>/arena.json` in the current directory, and every command after `init` finds it through
-`.arena/LATEST`.
+`.arena/LATEST`. Run `ARENA` from the project root, which is where `.arena/` is created.
 
 ## Step 1: size it, and get a yes if nobody asked for it
 
