@@ -44,8 +44,26 @@ Claude Code namespaces plugin skills, so installed as a plugin it shows up as `/
 Copy the folder instead if you want plain `/arena`. Project-local instead of global: copy the same
 folder into your repo's `.claude/skills/`.
 
-It needs Claude Code, because it spawns sub-agents with the Agent tool, and Python 3.8 or newer.
-Nothing to pip install.
+It needs an agent that can spawn sub-agents (Claude Code's Agent tool, or Cursor's Task tool) and
+Python 3.8 or newer. Nothing to pip install.
+
+## Cursor
+
+This repo is also a Cursor plugin. The manifest is `.cursor-plugin/plugin.json` and the marketplace
+entry is `.cursor-plugin/marketplace.json`. In Cursor: Customize, Plugins, From GitHub Repository,
+and point it at this repo.
+
+Cursor automations only load skills that live in the repository under `.cursor/skills/`. The entry
+point is `.cursor/skills/arena/SKILL.md`. It sends the agent to `skills/arena/SKILL.md` and runs
+`python3 skills/arena/bracket.py`. Open the repo and the skill is available with no extra install:
+
+```
+/arena
+/arena --quick write the headline for our pricing page
+```
+
+Claude Code in this repo can use the same folder through `.claude/skills/arena`, which points at
+`skills/arena`.
 
 ## Use it
 

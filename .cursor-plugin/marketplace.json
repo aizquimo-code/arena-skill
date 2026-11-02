@@ -1,0 +1,24 @@
+{
+  "name": "arena-skill",
+  "owner": {
+    "name": "Jake Schincariol",
+    "url": "https://opusjake.ai"
+  },
+  "metadata": {
+    "description": "Marketplace manifest for the Arena skill.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "arena-skill",
+      "source": "./",
+      "description": "Spins up N sub-agents on the same task, each with a different strategy card, and runs a bracket until one answer survives.",
+      "category": "productivity",
+      "keywords": [
+        "arena",
+        "subagents",
+        "tournament"
+      ]
+    }
+  ]
+}

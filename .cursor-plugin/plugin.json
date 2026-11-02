@@ -1,0 +1,26 @@
+{
+  "name": "arena-skill",
+  "displayName": "Arena",
+  "version": "1.0.0",
+  "description": "When one answer is not enough, N sub-agents get the same task and a different strategy card, then fight a bracket until one solution survives.",
+  "author": {
+    "name": "Jake Schincariol",
+    "url": "https://opusjake.ai"
+  },
+  "homepage": "https://github.com/Jakeschincariol/arena-skill",
+  "repository": "https://github.com/aizquimo-code/arena-skill",
+  "license": "MIT",
+  "keywords": [
+    "arena",
+    "subagents",
+    "multi-agent",
+    "tournament",
+    "skills"
+  ],
+  "category": "productivity",
+  "tags": [
+    "arena",
+    "subagents",
+    "tournament"
+  ]
+}
